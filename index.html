@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Валентинка ❤️</title>
+<title>Валентинка для зайчика ❤️</title>
 
 <style>
 body {
   margin: 0;
   padding: 0;
-  /* Розміри екрана iPhone 14 Pro Max */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -21,76 +20,78 @@ body {
   overflow: hidden;
 }
 
-/* Контейнер для більшого серця */
+/* Контейнер для великого серця */
 .valentine-box {
   position: relative;
-  /* Збільшений розмір контейнера */
-  width: 400px; 
-  height: 400px;
+  width: 450px; 
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: pulse 2s infinite ease-in-out;
 }
 
-/* Збільшене серце */
+/* Максимально велике серце */
 .heart {
   position: absolute;
-  /* Збільшено з 150px до 220px */
-  width: 220px;
-  height: 220px;
+  width: 280px; /* Збільшено */
+  height: 280px; /* Збільшено */
   background: #e6005c;
   transform: rotate(-45deg);
   z-index: 1;
-  box-shadow: 0 10px 30px rgba(230, 0, 92, 0.3);
+  box-shadow: 0 15px 40px rgba(230, 0, 92, 0.4);
 }
 
 .heart::before,
 .heart::after {
   content: "";
   position: absolute;
-  width: 220px;
-  height: 220px;
+  width: 280px;
+  height: 280px;
   background: #e6005c;
   border-radius: 50%;
 }
 
 .heart::before {
-  top: -110px; /* Половина від висоти */
+  top: -140px; 
   left: 0;
 }
 
 .heart::after {
-  left: 110px; /* Половина від ширини */
+  left: 140px; 
   top: 0;
 }
 
-/* Текст на серці */
+/* Текст в один рядок */
 .message {
   position: relative;
   z-index: 2;
   text-align: center;
   color: white;
-  /* Трішки більший шрифт для великого екрана */
-  font-size: 26px; 
+  font-size: 24px; /* Оптимальний розмір, щоб влізло в рядок */
   font-weight: 700;
-  line-height: 1.4;
-  padding: 0 40px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  white-space: nowrap; /* Заборона переносу тексту */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.message span {
+  display: block;
+  margin-top: 10px;
+  font-size: 28px;
 }
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.07); }
 }
 
 footer {
   position: absolute;
-  bottom: 60px; /* Вище для iPhone (враховуючи home bar) */
+  bottom: 60px;
   font-weight: 500;
   font-size: 18px;
   color: #7a003c;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 </style>
 </head>
@@ -99,8 +100,8 @@ footer {
 <div class="valentine-box">
   <div class="heart"></div>
   <div class="message">
-    З днем кохання,<br>мій зайчик ❤️<br>
-    Кохаю тебе ❤️
+    З днем кохання, мій зайчик ❤️
+    <span>Кохаю тебе ❤️</span>
   </div>
 </div>
 
