@@ -1,59 +1,30 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=430, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Валентинка ❤️</title>
+
   <style>
-    :root {
-      --w: 430px;   /* iPhone 14 Pro Max width (CSS px) */
-      --h: 932px;   /* iPhone 14 Pro Max height (CSS px) */
-      --bg1: #ff9a9e;
-      --bg2: #fad0c4;
-      --heart: #e6005c;
-      --text: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #ff9a9e, #fad0c4);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, var(--bg1), var(--bg2));
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .screen {
-      width: var(--w);
-      height: var(--h);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
       position: relative;
-    }
-
-    .heart-wrap {
-      width: 300px;
-      height: 270px;
-      position: relative;
-      animation: pulse 1.6s infinite ease-in-out;
     }
 
     .heart {
-      position: absolute;
+      position: relative;
       width: 300px;
-      height: 270px;
-      background: var(--heart);
+      height: 300px;
+      background: #e6005c;
       transform: rotate(-45deg);
-      top: 0;
-      left: 0;
-      border-radius: 20px;
+      animation: pulse 1.6s infinite ease-in-out;
     }
 
     .heart::before,
@@ -61,8 +32,8 @@
       content: "";
       position: absolute;
       width: 300px;
-      height: 270px;
-      background: var(--heart);
+      height: 300px;
+      background: #e6005c;
       border-radius: 50%;
     }
 
@@ -79,44 +50,42 @@
     .message {
       position: absolute;
       width: 100%;
-      height: 100%;
-      transform: rotate(45deg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      color: var(--text);
-      font-size: 24px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      color: white;
+      font-size: 22px;
       font-weight: 600;
-      padding: 20px;
       line-height: 1.4;
-    }
-
-    .hint {
-      position: absolute;
-      bottom: 40px;
-      font-size: 16px;
-      color: #7a003c;
-      font-weight: 500;
+      padding: 0 20px;
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
+      0%, 100% { transform: rotate(-45deg) scale(1); }
+      50% { transform: rotate(-45deg) scale(1.08); }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 30px;
+      font-weight: 500;
+      color: #7a003c;
+      font-size: 16px;
     }
   </style>
 </head>
+
 <body>
-  <main class="screen">
-    <div class="heart-wrap">
-      <div class="heart">
-        <p class="message">
-          З днем кохання, мій зайчик ❤️<br />
-          Кохаю тебе ❤️
-        </p>
-      </div>
+
+  <div class="heart">
+    <div class="message">
+      З днем кохання, мій зайчик ❤️<br>
+      Кохаю тебе ❤️
     </div>
-    <footer class="hint">З Днем святого Валентина!</footer>
-  </main>
+  </div>
+
+  <footer>З Днем святого Валентина!</footer>
+
 </body>
 </html>
