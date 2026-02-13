@@ -2,86 +2,95 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Валентинка ❤️</title>
 
 <style>
 body {
   margin: 0;
+  padding: 0;
+  /* Розміри екрана iPhone 14 Pro Max */
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #ff9a9e, #fad0c4);
-  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(180deg, #ff9a9e 0%, #fad0c4 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow: hidden;
 }
 
-/* Контейнер для всієї композиції */
+/* Контейнер для більшого серця */
 .valentine-box {
   position: relative;
-  width: 300px;
-  height: 300px;
+  /* Збільшений розмір контейнера */
+  width: 400px; 
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: pulse 1.8s infinite ease-in-out;
+  animation: pulse 2s infinite ease-in-out;
 }
 
-/* Саме серце (тільки візуал) */
+/* Збільшене серце */
 .heart {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  /* Збільшено з 150px до 220px */
+  width: 220px;
+  height: 220px;
   background: #e6005c;
   transform: rotate(-45deg);
   z-index: 1;
+  box-shadow: 0 10px 30px rgba(230, 0, 92, 0.3);
 }
 
 .heart::before,
 .heart::after {
   content: "";
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 220px;
+  height: 220px;
   background: #e6005c;
   border-radius: 50%;
 }
 
 .heart::before {
-  top: -75px;
+  top: -110px; /* Половина від висоти */
   left: 0;
 }
 
 .heart::after {
-  left: 75px;
+  left: 110px; /* Половина від ширини */
   top: 0;
 }
 
-/* Текст (тепер він поверх серця і не залежить від його повороту) */
+/* Текст на серці */
 .message {
   position: relative;
-  z-index: 2; /* Щоб бути над серцем */
+  z-index: 2;
   text-align: center;
   color: white;
-  font-size: 20px;
-  font-weight: 600;
+  /* Трішки більший шрифт для великого екрана */
+  font-size: 26px; 
+  font-weight: 700;
   line-height: 1.4;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-  pointer-events: none; /* Щоб не заважав клікам, якщо будуть */
+  padding: 0 40px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  50% { transform: scale(1.05); }
 }
 
 footer {
   position: absolute;
-  bottom: 30px;
+  bottom: 60px; /* Вище для iPhone (враховуючи home bar) */
   font-weight: 500;
+  font-size: 18px;
   color: #7a003c;
+  opacity: 0.8;
 }
 </style>
 </head>
